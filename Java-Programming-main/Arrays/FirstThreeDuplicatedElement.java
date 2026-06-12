@@ -1,0 +1,33 @@
+class FirstThreeDuplicatedElement
+{
+	public static void main(String[] args) 
+	{
+		int a[]= {10,20,10,30,89,89,89,89,9,99,99},max=0;//[10,20,10,30]
+		boolean b[]=new boolean[a.length];//[fasle,false,false,false]
+		for(int i=0;i<=a.length-1;i++)
+		{
+			if(b[i]==false)
+			{
+				int count=1;
+				for(int j=i+1;j<=a.length-1;j++)
+				{
+					if(a[i]==a[j])
+					{
+						count++;
+						b[j]=true;
+					}
+				}
+				if(count>1)
+				{
+					max++;
+					System.out.println(a[i]+" - "+ count);
+					if(max==3)
+					{
+						break;
+					}
+				}
+				
+			}
+		}
+	}
+}
